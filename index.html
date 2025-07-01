@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>TravelPro - Liburan Anti Galau, Jaminan Aman dari Allianz!</title>
+   <!-- Tailwind CSS CDN -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- Google Font - Inter -->
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <!-- Font Awesome for Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <style>
+       /* Menggunakan font Inter secara global */
+       body {
+           font-family: 'Inter', sans-serif;
+           overflow-x: hidden; /* Mencegah scroll horizontal */
+       }
+       /* Styling kustom untuk hero section agar gambar pas dan responsif */
+       .hero-section {
+           background-image: url('https://images.unsplash.com/photo-1501785888041-af3ba6f60060?auto=format&fit=crop&q=80&w=1920&h=1080&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           position: relative;
+       }
+       /* Overlay untuk teks lebih mudah dibaca */
+       .hero-overlay {
+           background-color: rgba(0, 0, 0, 0.6); /* Semi-transparan hitam lebih pekat */
+       }
+       /* Custom styles for gradients and shadows - Diubah ke biru terang */
+       .btn-primary {
+           background: linear-gradient(to right, #3B82F6, #0EA5E9); /* Biru terang ke Biru Langit */
+           box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+           transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+       }
+       .btn-primary:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+       }
+       .card-shadow {
+           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+           transition: transform 0.2s ease-in-out;
+       }
+       .card-shadow:hover {
+           transform: translateY(-5px);
+       }
+       /* Feature icon color - Diubah ke biru terang */
+       .feature-icon {
+           color: #2563EB; /* Biru yang lebih kuat */
+       }
+   </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+ 
+   <!-- Navbar -->
+   <nav class="bg-white shadow-lg rounded-b-xl py-4 px-6 md:px-12 fixed w-full z-50 top-0">
+       <div class="container mx-auto flex justify-between items-center flex-wrap">
+           <!-- Logo - Kembali ke "Allianz TravelPro" -->
+           <a href="#" class="text-2xl font-bold text-blue-600">TravelPro | Asuransi Perjalanan</a>
+ 
+           <!-- Mobile Menu Button -->
+           <div class="block lg:hidden">
+               <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-blue-500">
+                   <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v15z"/></svg>
+               </button>
+           </div>
+ 
+           <!-- Menu Items -->
+           <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0">
+               <ul class="lg:flex justify-end flex-1 items-center">
+                   <li class="mr-6 mb-4 lg:mb-0">
+                       <a class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out font-medium" href="#hero">Beranda</a>
+                   </li>
+                   <li class="mr-6 mb-4 lg:mb-0">
+                       <a class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out font-medium" href="#features">Fitur Unggulan</a>
+                   </li>
+                   <li class="mr-6 mb-4 lg:mb-0">
+                       <a class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out font-medium" href="#testimonials">Kata Mereka</a>
+                   </li>
+                   <li class="mr-6 mb-4 lg:mb-0">
+                       <a class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out font-medium" href="#faq">FAQ</a>
+                   </li>
+                   <li>
+                       <a class="px-5 py-2 btn-primary text-white font-semibold rounded-full hover:shadow-xl transition duration-300 ease-in-out" href="#cta">Cek Premi!</a>
+                   </li>
+               </ul>
+           </div>
+       </div>
+   </nav>
+ 
+   <!-- Hero Section -->
+   <header id="hero" class="hero-section min-h-screen flex items-center justify-center text-center text-white pt-20 pb-10">
+       <div class="hero-overlay absolute inset-0"></div>
+       <div class="container mx-auto relative z-10 px-4 py-16 md:py-24">
+           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up">
+               Jelajahi Dunia dengan Perlindungan Kelas Dunia!
+           </h1>
+           <p class="text-lg sm:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto opacity-90 animate-fade-in-up delay-100">
+               TravelPro, asuransi perjalanan dengan perlindungan komprehensif siap mendampingi kamu menjelajahi dunia.
+           </p>
+           <a href="#cta" class="inline-block btn-primary text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out animate-fade-in-up delay-200">
+               Gas! Cari Tahu Preminya Sekarang
+           </a>
+       </div>
+   </header>
+ 
+   <!-- Fitur Unggulan Section -->
+   <section id="features" class="py-16 bg-white">
+       <div class="container mx-auto px-4">
+           <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Kenapa TravelPro Worth It Banget Buat Kamu?</h2>
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <!-- Feature Item 1: Perlindungan Pandemi/Epidemi -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow text-center">
+                   <div class="feature-icon mb-4">
+                       <i class="fas fa-viruses fa-4x"></i> <!-- Icon untuk pandemi -->
+                   </div>
+                   <h3 class="text-xl font-semibold mb-4 text-gray-900">Proteksi COVID-19 & Epidemic/Pandemic</h3>
+                   <p class="text-gray-600">TravelPro udah cover lho untuk jaminan Epidemi/Pandemi. Jadi, gak perlu cemas lagi kalau ada hal tak terduga.</p>
+               </div>
+               <!-- Feature Item 2: Cashless Medical Treatment -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow text-center">
+                   <div class="feature-icon mb-4">
+                       <i class="fas fa-money-bill-wave fa-4x"></i> <!-- Icon untuk cashless -->
+                   </div>
+                   <h3 class="text-xl font-semibold mb-4 text-gray-900">Pengobatan Cashless di Luar Negeri</h3>
+                   <p class="text-gray-600">Sakit pas liburan? No worries! Biaya pengobatan di luar negeri bisa cashless. Tinggal fokus sembuh, bukan mikirin bayar!</p>
+               </div>
+               <!-- Feature Item 3: 24/7 Emergency Assistance -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow text-center">
+                   <div class="feature-icon mb-4">
+                       <i class="fas fa-headset fa-4x"></i> <!-- Icon untuk bantuan 24/7 -->
+                   </div>
+                   <h3 class="text-xl font-semibold mb-4 text-gray-900">Bantuan Darurat 24 Jam Non-stop</h3>
+                   <p class="text-gray-600">Ada apa-apa di jalan? Tim Allianz siap sedia 24/7 buat bantu kamu, di mana pun kamu berada.</p>
+               </div>
+               <!-- Feature Item 4: Flight Delay Coverage -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow text-center">
+                   <div class="feature-icon mb-4">
+                       <i class="fas fa-plane-slash fa-4x"></i> <!-- Icon untuk penundaan penerbangan -->
+                   </div>
+                   <h3 class="text-xl font-semibold mb-4 text-gray-900">Delay Pesawat? Tetap Aman!</h3>
+                   <p class="text-gray-600">Masa tunggu 4 jam untuk keterlambatan penerbangan dan dijamin apapun alasannya. Waktu nunggu jadi lebih santai.</p>
+               </div>
+               <!-- Feature Item 5: Baggage Protection -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow text-center">
+                   <div class="feature-icon mb-4">
+                       <i class="fas fa-suitcase-rolling fa-4x"></i> <!-- Icon untuk bagasi -->
+                   </div>
+                   <h3 class="text-xl font-semibold mb-4 text-gray-900">Bagasi Aman, Hati Tenang</h3>
+                   <p class="text-gray-600">Kehilangan barang, bagasi delay, atau kartu kredit disalahgunakan? TravelPro cover semuanya. Liburan tetap stylish!</p>
+               </div>
+               <!-- Feature Item 6: Flexible Plans -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow text-center">
+                   <div class="feature-icon mb-4">
+                       <i class="fas fa-hand-holding-usd fa-4x"></i> <!-- Icon untuk fleksibel/harga -->
+                   </div>
+                   <h3 class="text-xl font-semibold mb-4 text-gray-900">Pilihan Plan Super Fleksibel</h3>
+                   <p class="text-gray-600">Ada banyak pilihan plan yang bisa disesuaikan sama kebutuhan dan budgetmu. Gak perlu bayar yang gak perlu!</p>
+               </div>
+           </div>
+       </div>
+   </section>
+ 
+   <!-- Testimoni Klaim Section -->
+   <section id="testimonials" class="py-16 bg-gray-100">
+       <div class="container mx-auto px-4">
+           <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Kata Mereka yang Udah Anti Galau Bareng TravelPro</h2>
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+               <!-- Testimonial 1: Penundaan Bagasi -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow flex flex-col items-center text-center">
+                   <img src="https://placehold.co/80x80/6366F1/FFFFFF?text=P.A." alt="P.A. - Traveler" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-blue-200">
+                   <p class="text-gray-700 italic mb-4">"Gila sih! Bagasi nyasar >28 jam. Udah mau pasrah, eh TravelPro langsung cairin klaim Rp 3,5 juta. Liburan tetep on fire!"</p>
+                   <p class="font-semibold text-gray-900">- P.A. (Bukan Nama Sebenarnya)</p>
+               </div>
+               <!-- Testimonial 2: Penundaan Penerbangan -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow flex flex-col items-center text-center">
+                   <img src="https://placehold.co/80x80/8B5CF6/FFFFFF?text=M.R." alt="M.R. - Traveler" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-blue-200">
+                   <p class="text-gray-700 italic mb-4">"Flight delay 20 jam lebih! Jujur panik. Tapi TravelPro gercep banget, dapat santunan Rp 2,5 juta. Bikin tenang dan bisa nyantai lagi."</p>
+                   <p class="font-semibold text-gray-900">- M.R. (Bukan Nama Sebenarnya)</p>
+               </div>
+               <!-- Testimonial 3: Penundaan Perjalanan (Kuala Lumpur - Jakarta) -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow flex flex-col items-center text-center">
+                   <img src="https://placehold.co/80x80/EF4444/FFFFFF?text=S.K." alt="S.K. - Traveler" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-blue-200">
+                   <p class="text-gray-700 italic mb-4">"Perjalanan dari KL ke Jakarta ngaret 4 jam 55 menit. Kirain bakal zonk, ternyata di-cover Rp 500 ribu. Mantap jiwa!"</p>
+                   <p class="font-semibold text-gray-900">- S.K. (Bukan Nama Sebenarnya)</p>
+               </div>
+               <!-- Testimonial 4: Penundaan Kereta (Wina - Budapest) -->
+               <div class="bg-white p-8 rounded-2xl shadow-md card-shadow flex flex-col items-center text-center">
+                   <img src="https://placehold.co/80x80/007bff/FFFFFF?text=A.D." alt="A.D. - Traveler" class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-blue-200">
+                   <p class="text-gray-700 italic mb-4">"Kereta Wina-Budapest delay hampir 13 jam. Sempet bete, tapi pas tahu dapat santunan Rp 1,5 juta dari TravelPro, langsung senyum lagi!"</p>
+                   <p class="font-semibold text-gray-900">- A.D. (Bukan Nama Sebenarnya)</p>
+               </div>
+           </div>
+       </div>
+   </section>
+ 
+   <!-- FAQ Section -->
+   <section id="faq" class="py-16 bg-white">
+       <div class="container mx-auto px-4">
+           <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Sering Ditanya: Biar Makin Paham!</h2>
+           <div class="max-w-3xl mx-auto">
+               <!-- FAQ Item 1 -->
+               <div class="border-b border-gray-200 py-6">
+                   <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleFAQ('faq1')">
+                       <span>Siapa aja yang bisa punya TravelPro?</span>
+                       <i id="icon-faq1" class="fas fa-chevron-down text-blue-600"></i>
+                   </button>
+                   <div id="faq1" class="mt-4 text-gray-600 hidden">
+                       <p>Kamu yang tinggal atau kerja di Indonesia, punya identitas valid (KTP/Kitas/Kitap/Visa), mulai dan ngakhirin perjalanan di Indonesia (pulang-pergi), udah bayar premi full, dan beli polis sebelum berangkat. Usia minimal 14 hari sampai maksimal 84 tahun ya!</p>
+                   </div>
+               </div>
+               <!-- FAQ Item 2 -->
+               <div class="border-b border-gray-200 py-6">
+                   <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleFAQ('faq2')">
+                       <span>Apa aja yang gak dijamin sama TravelPro?</span>
+                       <i id="icon-faq2" class="fas fa-chevron-down text-blue-600"></i>
+                   </button>
+                   <div id="faq2" class="mt-4 text-gray-600 hidden">
+                       <p>TravelPro gak nge-cover hal-hal kayak perang, bunuh diri atau nyakitin diri sendiri, serta sakit/penyakit yang udah ada sebelumnya (existing health condition). Ada juga beberapa negara tujuan yang gak di-cover karena sanksi internasional (misalnya Afghanistan, Korea Utara, dll.). Detail lengkapnya bisa cek di RIPLAY Umum di website Allianz.</p>
+                   </div>
+               </div>
+               <!-- FAQ Item 3 -->
+               <div class="border-b border-gray-200 py-6">
+                   <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleFAQ('faq3')">
+                       <span>Kalau mau klaim, gimana caranya?</span>
+                       <i id="icon-faq3" class="fas fa-chevron-down text-blue-600"></i>
+                   </button>
+                   <div id="faq3" class="mt-4 text-gray-600 hidden">
+                       <p>Laporin klaim ke PT Asuransi Allianz Utama Indonesia secepatnya, maksimal 90 hari setelah kejadian. Dokumen wajibnya antara lain formulir klaim, boarding pass asli, fotokopi tiket itinerary, dan fotokopi paspor (halaman data diri & cap imigrasi). Proses pembayaran klaim sekitar 14 hari kerja atau maksimal 30 hari kalender setelah dokumen lengkap dan disetujui.</p>
+                   </div>
+               </div>
+                <!-- FAQ Item 4 -->
+               <div class="border-b border-gray-200 py-6">
+                   <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleFAQ('faq4')">
+                       <span>Apa itu Masa Tunggu 4 Jam untuk Keterlambatan Penerbangan?</span>
+                       <i id="icon-faq4" class="fas fa-chevron-down text-blue-600"></i>
+                   </button>
+                   <div id="faq4" class="mt-4 text-gray-600 hidden">
+                       <p>Artinya, jika penerbanganmu mengalami penundaan selama minimal 4 jam berturut-turut, TravelPro akan memberikan jaminan perlindungan untuk penundaan tersebut. Ini berlaku untuk setiap periode 4 jam penundaan, dan yang paling penting, dijamin untuk alasan penundaan apa pun oleh maskapai.</p>
+                   </div>
+               </div>
+               <!-- FAQ Item 5 -->
+               <div class="border-b border-gray-200 py-6">
+                   <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleFAQ('faq5')">
+                       <span>Berapa lama sih perjalanan yang bisa di-cover TravelPro?</span>
+                       <i id="icon-faq5" class="fas fa-chevron-down text-blue-600"></i>
+                   </button>
+                   <div id="faq5" class="mt-4 text-gray-600 hidden">
+                       <p>Untuk Polis Perjalanan sekali jalan (Single Trip), lama maksimum perjalananmu gak boleh lebih dari 183 hari. Jadi, mau liburan singkat atau agak panjang, tetap aman!</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+ 
+   <!-- CTA Section -->
+   <section id="cta" class="py-16 bg-blue-600 text-white text-center rounded-t-xl">
+       <div class="container mx-auto px-4">
+           <h2 class="text-3xl lg:text-4xl font-bold mb-6">Penasaran Berapa Premi TravelPro Buat Kamu?</h2>
+           <p class="text-lg opacity-90 mb-8 max-w-xl mx-auto">Yuk, cari tahu sekarang! Liburan impianmu tinggal selangkah lagi.</p>
+           <!-- WhatsApp Link Updated -->
+           <a href="https://wa.me/6281241803280?text=Halo%20Allianz,%20saya%20mau%20tanya%20premi%20TravelPro%20untuk%20liburan%20saya!" target="_blank" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl hover:bg-gray-100 transition duration-300 ease-in-out">
+               <i class="fab fa-whatsapp mr-2"></i> Tanya Premi Lewat WhatsApp!
+           </a>
+           <p class="text-sm mt-4 opacity-80">Dijamin respons cepat dan nggak ribet!</p>
+       </div>
+   </section>
+ 
+   <!-- Footer -->
+   <footer class="bg-gray-900 text-gray-300 py-10 rounded-t-xl">
+       <div class="container mx-auto px-4 text-center">
+           <!-- Quick Links -->
+           <div>
+               <h3 class="text-xl font-bold text-white mb-4">Tautan Cepat</h3>
+               <ul class="text-sm flex flex-wrap justify-center space-x-4">
+                   <li class="mb-2 md:mb-0"><a href="#hero" class="hover:text-blue-400 transition duration-300">Beranda</a></li>
+                   <li class="mb-2 md:mb-0"><a href="#features" class="hover:text-blue-400 transition duration-300">Fitur Unggulan</a></li>
+                   <li class="mb-2 md:mb-0"><a href="#testimonials" class="hover:text-blue-400 transition duration-300">Kata Mereka</a></li>
+                   <li class="mb-2 md:mb-0"><a href="#faq" class="hover:text-blue-400 transition duration-300">FAQ</a></li>
+               </ul>
+           </div>
+       </div>
+       <!-- Disclaimer -->
+       <div class="container mx-auto px-4 text-center text-gray-500 text-xs mt-8 pt-4 border-t border-gray-700">
+           <p class="mb-2">
+               TravelPro International Insurance-Enhanced adalah produk asuransi yang diterbitkan oleh PT Asuransi Allianz Utama Indonesia. Premi sudah termasuk biaya administrasi dan biaya akuisisi.
+           </p>
+           <p class="mb-2">
+               Brosur ini bukan merupakan bagian dari Polis dan bukan suatu bentuk perjanjian asuransi antara PT Asuransi Allianz Utama Indonesia dengan Nasabah. Nasabah terikat penuh dengan setiap ketentuan yang terdapat dalam Polis.
+           </p>
+           <p>
+               Penjelasan lebih lengkap mengenai syarat, ketentuan termasuk pembebanan biaya secara rinci dan pengecualian dapat Anda pelajari pada Ringkasan Informasi Produk dan Layanan (RIPLAY) Umum dan Ringkasan Informasi Produk dan Layanan (RIPLAY) Personal serta Polis.
+           </p>
+           <p class="mt-4">
+               PT Asuransi Allianz Utama Indonesia berizin dan diawasi oleh Otoritas Jasa Keuangan.
+           </p>
+       </div>
+       <div class="text-center text-gray-500 text-sm mt-4 pt-4 border-t border-gray-700">
+           &copy; 2025 TravelPro. Hak Cipta Dilindungi Undang-Undang.
+       </div>
+   </footer>
+ 
+   <!-- JavaScript for Mobile Menu Toggle and FAQ Toggle -->
+   <script>
+       // Mobile Menu Toggle
+       document.getElementById('nav-toggle').onclick = function() {
+           document.getElementById('nav-content').classList.toggle('hidden');
+       }
+       // Menutup menu saat item diklik (untuk mobile)
+       document.querySelectorAll('#nav-content a').forEach(item => {
+           item.addEventListener('click', () => {
+               if (!document.getElementById('nav-content').classList.contains('hidden')) {
+                   document.getElementById('nav-content').classList.add('hidden');
+               }
+           });
+       });
+ 
+       // FAQ Toggle
+       function toggleFAQ(id) {
+           const content = document.getElementById(id);
+           const icon = document.getElementById('icon-' + id);
+           content.classList.toggle('hidden');
+           icon.classList.toggle('fa-chevron-down');
+           icon.classList.toggle('fa-chevron-up');
+       }
+   </script>
+ 
+</body>
+</html>
